@@ -1,0 +1,60 @@
+Cara mengaktifkan fitur auth :
+1. app.php aktifkan 
+$app->middleware([
+    App\Http\Middleware\ExampleMiddleware::class
+]);
+
+$app->routeMiddleware([
+    'auth' => App\Http\Middleware\Authenticate::class,
+]);
+
+2. web
+
+surat :
+- id 
+- surah
+- ayah
+- because
+- indexCategory
+- sanad = silsilah
+- isnad = riwayat
+
+surat');
+$table->string('ayah');
+$table->longText('because')->nullable();
+$table->string('index');
+$table->string('sanad');
+$table->string('isnad');
+
+
+code : 200,
+status : ok
+data: [
+    {
+        "number": 1,
+        "name" : alhamdulilah,
+        "englishName" : "Al-fateha",
+        "englishNameTranslation" : "The Opening",
+        "numberOfAyahs" : 7,
+        "revelationType" : "Meccan"
+    }
+]
+
+
+
+
+php artisan make:migration create_asbab_table
+composer create-project --prefer-dist laravel/lumen blog
+
+Consolas, 'Courier New', monospace
+Fira Code
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=api-nuzul
+DB_USERNAME=root
+DB_PASSWORD=secret123
+
+Imam As suyuthi tidak menerangkan penjelasan apapun dalam bukunya terkait Sebab turun surat al-fatihah sengaja tidak memberikan penjelasan, karena memang surat ini turun tanpa sebab khusus. turunnya surat Alfatihah merupakan penyempurna kebaikan yang ada di dalam Alquran akan kami Sebutkan beberapa nama lain dari surat Al Fatihah, beserta keutamaannya.
+ Ibnu Katsir menuturkan dalam kitab tafsirnya, surat ini dinamai dengan Al Fatihah atau pembuka, Karena posisinya sebagai permulaan surat dalam Alquran detik. Selain itu, juga sebagai pembuka bacaan dalam salat. menurut jumhur surat al-fatihah juga dinamai dengan Ummul Kitab pengertian Ummul Qur'an. Imam at-tirmidzi menyebutkan sebuah hadis dalam prosesnya, yang ia komentari Dengan hadis okeh bahwa Abu Hurairah berkata Rasulullah Shallallahu Alaihi Wasallam bersabda, alhamdulillahirobbilalamin, adalah Ummul Quran atau induk Quran.
