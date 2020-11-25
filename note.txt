@@ -1,3 +1,50 @@
+Syarat install :
+1. Php >= 7.3 
+2. lumen versi 8 => Cek $ php artisan --version
+
+Cara menjalankan server rest api :
+1. Jalankan webserver (XAMPP, WAMP, MAMP)
+2. $ php -S localhost:8000 -t public di foldernya
+
+Cara install :
+1. create db dengan nama api-nuzul
+2. import db ada di folder db
+3. test menggunakan postman
+4. daftar dulu karena wajib menggunakan token buat auth
+
+Contoh method :
+$ POST localhost:8000/register
+{
+    "email": "admi@gmail.com",
+    "password": "123456"
+}
+Jika status success anda bisa login maka anda akan mendapat token akan selalu di pakai ketika post 
+
+POST localhost:8000/login
+
+POST localhost:8000/surah
+HEADERS token: d09ded98d9470553088f89a753048f8d29a4c8187f3d6d72bdf39850abcca8739161a1a4bdb5bbd8
+body
+{
+    "surat": "An-Nissa",
+    "ayah": "3",
+    "because": "Wanita",
+    "index": "",
+    "sanad": "Abu Hurairah",
+    "isnad": ""
+}
+ 
+GET localhost:8000/surah
+HEADERS token: d09ded98d9470553088f89a753048f8d29a4c8187f3d6d72bdf39850abcca8739161a1a4bdb5bbd8
+
+GET localhost:8000/surah/{id}
+PUT localhost:8000/surah/{id}
+DELETE localhost:8000/surah/{id}
+
+localhost:8000/login dengan token xxxxxx 
+key di isi dengan token value juga di isi
+
+
 Cara mengaktifkan fitur auth :
 1. app.php aktifkan 
 $app->middleware([
@@ -9,7 +56,6 @@ $app->routeMiddleware([
 ]);
 
 2. web
-
 surat :
 - id 
 - surah
@@ -40,14 +86,17 @@ data: [
     }
 ]
 
+Cara install lumen dengan composer
+$ composer create-project --prefer-dist laravel/lumen blog
 
+$ php artisan
+$ php artisan make:migration create_profile_table // tambah table
+$ php artisan migrate // cek di phpmyadmin tambah satu table profile
+$ php artisan migrate:rollback // menghapus table/undo
 
-
-php artisan make:migration create_asbab_table
-composer create-project --prefer-dist laravel/lumen blog
-
-Consolas, 'Courier New', monospace
-Fira Code
+Buat models Profile.php di app, sesuaikan datanya sama migrate
+tambahkan ProfileController.php di folder controller 
+tambahkan router di routes - web.php 
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -55,6 +104,3 @@ DB_PORT=3306
 DB_DATABASE=api-nuzul
 DB_USERNAME=root
 DB_PASSWORD=secret123
-
-Imam As suyuthi tidak menerangkan penjelasan apapun dalam bukunya terkait Sebab turun surat al-fatihah sengaja tidak memberikan penjelasan, karena memang surat ini turun tanpa sebab khusus. turunnya surat Alfatihah merupakan penyempurna kebaikan yang ada di dalam Alquran akan kami Sebutkan beberapa nama lain dari surat Al Fatihah, beserta keutamaannya.
- Ibnu Katsir menuturkan dalam kitab tafsirnya, surat ini dinamai dengan Al Fatihah atau pembuka, Karena posisinya sebagai permulaan surat dalam Alquran detik. Selain itu, juga sebagai pembuka bacaan dalam salat. menurut jumhur surat al-fatihah juga dinamai dengan Ummul Kitab pengertian Ummul Qur'an. Imam at-tirmidzi menyebutkan sebuah hadis dalam prosesnya, yang ia komentari Dengan hadis okeh bahwa Abu Hurairah berkata Rasulullah Shallallahu Alaihi Wasallam bersabda, alhamdulillahirobbilalamin, adalah Ummul Quran atau induk Quran.
