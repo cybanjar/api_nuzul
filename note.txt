@@ -96,7 +96,7 @@ $ php artisan migrate:rollback // menghapus table/undo
 
 Buat models Profile.php di app, sesuaikan datanya sama migrate
 tambahkan ProfileController.php di folder controller 
-tambahkan router di routes - web.php 
+tambahkan router di routes - web.php //$router->post('/profile', 'ProfileController@create');
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
