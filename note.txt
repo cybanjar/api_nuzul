@@ -7,7 +7,7 @@ Cara menjalankan server rest api :
 2. $ php -S localhost:8000 -t public di foldernya
 
 Cara install :
-1. create db dengan nama api-nuzul
+1. create db dengan nama api-nuzul (sesuaikan)
 2. import db ada di folder db
 3. test menggunakan postman
 4. daftar dulu karena wajib menggunakan token buat auth
