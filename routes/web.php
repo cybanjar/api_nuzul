@@ -27,3 +27,4 @@ $router->post('/register', 'UserController@register');
 $router->post('/login', 'UserController@login');
 
 $router->post('/profile', 'ProfileController@create');
+$router->post('/posting', 'PostingController@create');
