@@ -42,36 +42,35 @@ class PostingController extends Controller
     return response()->json($posting);
    }
 
-//    public function update(Request $request, $id)
-//    {
-//         $surah = Surah::find($id);
-//         if(!$surah) {
-//             return response()->json(['message' => 'Surah not found!'], 404);
-//         }
+   public function update(Request $request, $id)
+   {
+        $posting = Posting::find($id);
+        if(!$posting) {
+            return response()->json(['message' => 'Post not found!'], 404);
+        }
 
-//         $this->validate($request, [
-//             'surat' => 'string',
-//             'ayah' => 'string',
-//             'because' => 'string',
-//             'index' => 'string',
-//             'sanad' => 'string',
-//             'isnad' => 'string'
-//        ]);
-//         $data = $request->all();
+        $this->validate($request, [
+            'nama' => 'required',
+            'harga' => 'required',
+            'deskripsi' => 'required',
+            'lokasi' => 'required',
+            'kategori' => 'required',
+       ]);
+        $data = $request->all();
 
-//         $surah->fill($data);
+        $posting->fill($data);
 
-//         $surah->save();
-//         return response()->json($surah);
-//    }
+        $posting->save();
+        return response()->json($posting);
+   }
 
-//    public function destroy($id) {
-//        $surah = Surah::find($id);
-//        if(!$surah) {
-//             return response()->json(['message' => 'Surah not found!'], 404);
-//         }
+   public function destroy($id) {
+       $posting = Posting::find($id);
+       if(!$posting) {
+            return response()->json(['message' => 'Surah not found!'], 404);
+        }
 
-//         $surah->delete();
-//         return response()->json(['message' => 'Surah has been deleted!']);
-//    }
+        $posting->delete();
+        return response()->json(['message' => 'Surah has been deleted!']);
+   }
 }

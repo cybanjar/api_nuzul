@@ -14,7 +14,7 @@
 */
 
 $router->get('/', function () use ($router) {
-    return 'ok';
+    return 'Ok';
 });
 
 $router->post('/surat', 'SurahController@create');
@@ -28,3 +28,7 @@ $router->post('/login', 'UserController@login');
 
 $router->post('/profile', 'ProfileController@create');
 $router->post('/posting', 'PostingController@create');
+$router->get('/posting', 'PostingController@index');
+$router->get('/posting/{id}', 'PostingController@show');
+$router->put('/posting/{id}', 'PostingController@update');
+$router->delete('/posting/{id}', 'PostingController@destroy');
