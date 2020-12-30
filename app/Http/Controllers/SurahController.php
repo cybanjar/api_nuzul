@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Surah;
+use App\Models\Surah;
 
 use Illuminate\Http\Request;
 
